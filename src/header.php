@@ -1,8 +1,21 @@
-<?php include_once("config.php"); ?>
+<?php
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+      $client['ip'] = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+      $client['ip'] = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+      $client['ip'] = $_SERVER['REMOTE_ADDR'];
+    }
+    if (preg_match("/(10\.0|10\.1|10\.2|192\.168|127\.0)\.([0-9]*)\.([0-9]*)/", $client['ip'])) {
+        $site['bitsurl'] = "https://hq.redeclipse.net/bits/";
+    } else {
+        $site['bitsurl'] = "https://redeclipse.net/bits/";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <title>Red Eclipse HQ: <?php echo $pagename; ?></title>
+        <title>Red Eclipse HQ: <?php echo $site['pagename']; ?></title>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="msapplication-TileColor" content="#440000">
@@ -65,4 +78,4 @@
         </nav>
         <div class="container pagecontent">
             <div class="main pagecontainer">
-                <h2>Red Eclipse HQ: <?php echo $pagename; ?></h2>
+                <h1>Red Eclipse HQ: <?php echo $site['pagename']; ?></h1>
