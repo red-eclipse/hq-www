@@ -1,4 +1,4 @@
-<?php include_once("/var/www/src/config.php"); ?>
+<?php include_once("config.php"); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
