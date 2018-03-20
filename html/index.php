@@ -1,5 +1,5 @@
 <?php
-    $site['pagename]'] = "Index";
+    $site['pagename'] = "Index";
     include_once("/var/www/src/header.php");
 ?>
 <p>Welcome to the Red Eclipse HQ. You might be looking for the:</p>
