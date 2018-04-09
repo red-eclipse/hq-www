@@ -1,6 +1,7 @@
 <?php
-    $site['pagename'] = "Index";
-    include_once("/var/www/src/header.php");
+    include_once("/var/www/src/common.php");
+    $site['pagename'] = "Red Eclipse HQ";
+    include_once("header.php");
 ?>
 <p>Welcome to the Red Eclipse HQ. You might be looking for the:</p>
 <p>
@@ -21,4 +22,4 @@
         </li>
     </ul>
 </p>
-<?php include_once("/var/www/src/footer.php"); ?>
+<?php include_once("footer.php"); ?>
